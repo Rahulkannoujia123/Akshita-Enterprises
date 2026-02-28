@@ -23,8 +23,20 @@ export default function ContactPage() {
           Call or WhatsApp for pricing, installation and service support.
         </p>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
           <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm lg:col-span-2">
+            <div className="mb-8 overflow-hidden rounded-2xl border border-black/5 bg-slate-100">
+              <iframe
+                src="https://maps.google.com/maps?q=Akshita%20Enterprises%20Babatpur%20Varanasi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="300"
+                className="border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <div className="text-sm font-semibold text-slate-900">Phone & Email</div>
