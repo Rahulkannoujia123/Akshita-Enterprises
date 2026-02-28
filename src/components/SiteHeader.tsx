@@ -11,9 +11,19 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-slate-900 to-slate-700 text-sm font-bold text-white shadow-md">
-            AE
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-gradient-to-br from-emerald-600 to-slate-900 shadow-lg transition-transform group-hover:scale-105">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="absolute inset-0 h-full w-full p-2 text-white"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
           </div>
           <div className="leading-tight">
             <div className="text-sm font-semibold text-slate-900">
@@ -28,7 +38,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
+              className="relative rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-emerald-700"
             >
               {item.label}
             </Link>
