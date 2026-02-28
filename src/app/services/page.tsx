@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { buildWhatsAppLink, siteData } from "@/components/siteData";
 
@@ -30,26 +31,36 @@ export default function ServicesPage() {
           </Link>
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {siteData.services.map((s) => (
             <div
               key={s.title}
-              className="rounded-2xl border border-black/10 bg-slate-50 p-5"
+              className="group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition hover:shadow-md"
             >
-              <div className="text-base font-semibold text-slate-900">
-                {s.title}
+              <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                <Image
+                  src={s.image}
+                  alt={s.title}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-110"
+                />
               </div>
-              <div className="mt-2 text-sm text-slate-600">{s.desc}</div>
-              <a
-                className="mt-4 inline-flex rounded-lg bg-green-600 px-3 py-2 text-sm font-semibold text-white hover:bg-green-700"
-                href={buildWhatsAppLink(
-                  `Hello ${siteData.brand}, I need ${s.title}. Please share details.`
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Enquire on WhatsApp
-              </a>
+              <div className="p-5">
+                <div className="text-base font-bold text-slate-900">
+                  {s.title}
+                </div>
+                <div className="mt-2 text-sm text-slate-600">{s.desc}</div>
+                <a
+                  className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-700"
+                  href={buildWhatsAppLink(
+                    `Hello ${siteData.brand}, I need ${s.title}. Please share details.`
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Enquire on WhatsApp
+                </a>
+              </div>
             </div>
           ))}
         </div>
