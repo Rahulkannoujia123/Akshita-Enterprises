@@ -27,14 +27,20 @@ export default function ContactPage() {
           <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm lg:col-span-2">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <div className="text-sm font-semibold text-slate-900">Phone</div>
+                <div className="text-sm font-semibold text-slate-900">Phone & Email</div>
                 <a
                   href={buildTelLink()}
                   className="mt-2 block text-2xl font-extrabold text-slate-900 hover:underline"
                 >
                   {siteData.phoneDisplay}
                 </a>
-                <div className="mt-3 flex flex-wrap gap-2">
+                <a
+                  href={`mailto:${siteData.email}`}
+                  className="mt-1 block text-sm font-medium text-emerald-600 hover:underline"
+                >
+                  {siteData.email}
+                </a>
+                <div className="mt-4 flex flex-wrap gap-2">
                   <a
                     href={buildTelLink()}
                     className="inline-flex rounded-lg border border-black/10 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
@@ -72,16 +78,34 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-2xl border border-black/10 bg-slate-50 p-5">
-              <div className="text-sm font-semibold text-slate-900">
-                What to send on WhatsApp (for fastest quote)
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-black/10 bg-slate-50 p-5">
+                <div className="text-sm font-semibold text-slate-900">
+                  Quick Quote Details
+                </div>
+                <ul className="mt-3 list-disc space-y-1.5 pl-5 text-xs text-slate-700">
+                  <li>Service needed (CCTV / Computer / Solar)</li>
+                  <li>Location (nearby area)</li>
+                  <li>Photos of the site (optional)</li>
+                  <li>Your budget (optional)</li>
+                </ul>
               </div>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700">
-                <li>Which service you need (CCTV / Computer / Solar etc.)</li>
-                <li>Location (nearby area)</li>
-                <li>Any photos of the site/requirement (optional)</li>
-                <li>Your budget (optional)</li>
-              </ul>
+              <div className="rounded-2xl border border-emerald-100 bg-emerald-50/50 p-5">
+                <div className="text-sm font-semibold text-slate-900">
+                  Feedback
+                </div>
+                <p className="mt-2 text-xs text-slate-600">
+                  Loved our service? Please leave a review on Google!
+                </p>
+                <a
+                  href={siteData.reviewLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 rounded-lg bg-white border border-emerald-200 px-3 py-2 text-xs font-semibold text-emerald-800 hover:bg-emerald-100 transition"
+                >
+                  Rate us on Google
+                </a>
+              </div>
             </div>
           </div>
 

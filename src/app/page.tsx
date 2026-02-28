@@ -4,9 +4,14 @@ import { buildTelLink, buildWhatsAppLink, siteData } from "@/components/siteData
 export default function Home() {
   return (
     <div className="relative overflow-hidden bg-white">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_15%,rgba(15,23,42,0.08),transparent_35%),radial-gradient(circle_at_85%_10%,rgba(22,163,74,0.12),transparent_28%),linear-gradient(to_bottom,#f8fafc,#ffffff)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(16,185,129,0.08),transparent_35%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(15,23,42,0.05),transparent_28%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.03),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 to-white" />
+      </div>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 md:py-20">
+      <section className="mx-auto max-w-6xl px-4 py-14 md:py-24">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800">
@@ -22,7 +27,7 @@ export default function Home() {
             <p className="text-pretty text-base leading-relaxed text-slate-600 md:text-lg">
               {siteData.brand} provides sales, installation and reliable service
               for CCTV cameras, computers, biometric and GPS tracker solutions,
-              solar and more.
+              solar and more. Expert solutions for a secure and digital lifestyle.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -151,32 +156,54 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-3xl border border-black/10 bg-slate-900 p-6 text-white md:p-8">
-          <div className="grid gap-6 md:grid-cols-2 md:items-center">
-            <div>
-              <div className="text-xl font-bold">Get an instant estimate</div>
-              <div className="mt-1 text-sm text-white/80">
-                Share your requirement on WhatsApp and we&apos;ll reply with
-                options and pricing.
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-3 md:justify-end">
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="rounded-3xl border border-emerald-100 bg-emerald-50/50 p-6 md:p-8">
+            <h3 className="text-xl font-bold text-slate-900">What our customers say</h3>
+            <p className="mt-2 text-sm text-slate-600">
+              We take pride in our work. Share your feedback and help us grow!
+            </p>
+            <div className="mt-6">
               <a
-                href={buildWhatsAppLink(
-                  `Hello ${siteData.brand}, please share CCTV camera package details.`
-                )}
+                href={siteData.reviewLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100"
+                className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
               >
-                WhatsApp for quote
+                Rate us on Google
+                <svg className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
               </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-xl border border-white/20 px-4 py-3 text-sm font-semibold text-white hover:bg-white/10"
-              >
-                Contact details -&gt;
-              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-black/10 bg-slate-900 p-6 text-white md:p-8">
+            <div className="space-y-4">
+              <div>
+                <div className="text-xl font-bold">Get an instant estimate</div>
+                <div className="mt-1 text-sm text-white/80 text-pretty">
+                  Share your requirement on WhatsApp or Email and we&apos;ll reply with
+                  options and pricing.
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={buildWhatsAppLink(
+                    `Hello ${siteData.brand}, please share CCTV camera package details.`
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href={`mailto:${siteData.email}`}
+                  className="inline-flex items-center justify-center rounded-xl border border-white/20 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Email us
+                </a>
+              </div>
             </div>
           </div>
         </div>

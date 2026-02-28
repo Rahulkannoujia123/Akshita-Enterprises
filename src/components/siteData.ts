@@ -1,9 +1,11 @@
 export const siteData = {
   brand: "Akshita Enterprises",
+  email: "technologyakshita@gmail.com",
   phoneDisplay: "+91 8787260552",
   phoneE164: "918787260552",
   whatsappNumber: "918787260552",
   addressLine: "Babatpur, Varanasi (U.P.) - 221006",
+  reviewLink: "https://g.page/r/CU2YI2WbiDWREBE/review",
   services: [
     {
       title: "CCTV Camera",

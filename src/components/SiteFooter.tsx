@@ -19,6 +19,15 @@ export function SiteFooter() {
               {siteData.phoneDisplay}
             </a>
           </div>
+          <div className="text-sm text-slate-600">
+            Email:{" "}
+            <a
+              className="font-semibold text-slate-900 hover:underline"
+              href={`mailto:${siteData.email}`}
+            >
+              {siteData.email}
+            </a>
+          </div>
         </div>
 
         <div className="space-y-2">
@@ -38,7 +47,7 @@ export function SiteFooter() {
 
         <div className="space-y-3">
           <div className="text-sm font-semibold text-slate-900">
-            Need a quick quote?
+            Support & Feedback
           </div>
           <div className="flex flex-wrap gap-2">
             <a
@@ -47,15 +56,17 @@ export function SiteFooter() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700"
+              className="inline-flex rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700 shadow-sm"
             >
-              WhatsApp us
+              WhatsApp
             </a>
             <a
-              href={buildTelLink()}
-              className="inline-flex rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+              href={siteData.reviewLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 shadow-sm"
             >
-              Call now
+              Rate us
             </a>
           </div>
           <div className="text-xs text-slate-500">
