@@ -13,18 +13,12 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-gradient-to-br from-emerald-600 to-slate-900 shadow-lg transition-transform group-hover:scale-105">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              className="absolute inset-0 h-full w-full p-2 text-white"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
+          <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-slate-900 shadow-xl transition-all group-hover:scale-105 group-hover:shadow-emerald-500/20">
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-slate-900 opacity-100" />
+            <div className="relative font-black text-emerald-500 text-lg tracking-tighter transition-all group-hover:text-emerald-400 group-hover:scale-110">
+              AK
+            </div>
+            <div className="absolute bottom-0 right-0 h-1.5 w-1.5 bg-emerald-500 rounded-full animate-pulse m-1" />
           </div>
           <div className="leading-tight">
             <div className="text-sm font-semibold text-slate-900">

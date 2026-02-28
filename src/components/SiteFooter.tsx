@@ -8,12 +8,16 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 shadow-lg shadow-emerald-500/20">
-                <svg viewBox="0 0 24 24" fill="none" className="absolute inset-0 h-full w-full p-2 text-white" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
+              <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-slate-900 shadow-xl transition-all group-hover:scale-105 group-hover:shadow-emerald-500/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-slate-900 opacity-100" />
+                <div className="relative font-black text-emerald-500 text-lg tracking-tighter transition-all group-hover:text-emerald-400 group-hover:scale-110">
+                  AK
+                </div>
+                <div className="absolute bottom-0 right-0 h-1.5 w-1.5 bg-emerald-500 rounded-full animate-pulse m-1" />
               </div>
-              <span className="text-lg font-bold text-white tracking-tight">{siteData.brand}</span>
+              <span className="text-xl font-bold text-white tracking-tight">
+                {siteData.brand}
+              </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
               Your trusted local partner for CCTV, Computer, Solar and more in Varanasi since 2019.
@@ -76,8 +80,15 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-          <p>&copy; {new Date().getFullYear()} {siteData.brand}. All rights reserved.</p>
-          <p className="text-slate-500">Babatpur, Varanasi, Uttar Pradesh</p>
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <p>&copy; {new Date().getFullYear()} {siteData.brand}. All rights reserved.</p>
+            {siteData.gstNumber && (
+              <p className="text-slate-600">GST: {siteData.gstNumber}</p>
+            )}
+          </div>
+          <p className="text-slate-500 text-center md:text-right max-w-xs">
+            {siteData.fullAddress}
+          </p>
         </div>
       </div>
     </footer>
