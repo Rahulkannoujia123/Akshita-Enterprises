@@ -4,6 +4,7 @@ import { buildTelLink, buildWhatsAppLink, siteData } from "@/components/siteData
 const nav = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
