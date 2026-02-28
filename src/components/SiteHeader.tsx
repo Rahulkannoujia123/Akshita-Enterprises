@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { buildTelLink, buildWhatsAppLink, siteData } from "@/components/siteData";
 
@@ -10,18 +9,11 @@ const nav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-black/10 bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <Link href="/" className="flex items-center gap-3">
-          <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-black/10 bg-white">
-            <Image
-              src="/brand/banner.png"
-              alt="Akshita Enterprises"
-              fill
-              className="object-cover"
-              sizes="36px"
-              priority
-            />
+          <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-slate-900 to-slate-700 text-sm font-bold text-white shadow-md">
+            AE
           </div>
           <div className="leading-tight">
             <div className="text-sm font-semibold text-slate-900">
@@ -36,7 +28,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
             >
               {item.label}
             </Link>
@@ -46,7 +38,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <a
             href={buildTelLink()}
-            className="hidden rounded-lg border border-black/10 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50 sm:inline-flex"
+            className="hidden rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-50 sm:inline-flex"
           >
             Call
           </a>
@@ -54,7 +46,7 @@ export function SiteHeader() {
             href={buildWhatsAppLink(`Hello ${siteData.brand}, I want to enquire.`)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-lg bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-700"
+            className="inline-flex rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
           >
             WhatsApp
           </a>
@@ -66,7 +58,7 @@ export function SiteHeader() {
           <Link
             key={item.href}
             href={item.href}
-            className="flex-1 rounded-lg border border-black/10 bg-white px-3 py-2 text-center text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50"
+            className="flex-1 rounded-lg border border-slate-200 bg-white px-3 py-2 text-center text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
           >
             {item.label}
           </Link>
@@ -75,4 +67,3 @@ export function SiteHeader() {
     </header>
   );
 }
-

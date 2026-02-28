@@ -3,7 +3,7 @@ import { buildTelLink, buildWhatsAppLink, siteData } from "@/components/siteData
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-black/10 bg-white">
+    <footer className="border-t border-slate-200 bg-slate-50/70">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
         <div className="space-y-2">
           <div className="text-base font-semibold text-slate-900">
@@ -43,27 +43,27 @@ export function SiteFooter() {
           <div className="flex flex-wrap gap-2">
             <a
               href={buildWhatsAppLink(
-                `Hello ${siteData.brand}, I want to know price/installation details.`
+                `Hello ${siteData.brand}, I want to know price and installation details.`
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-lg bg-green-600 px-3 py-2 text-sm font-semibold text-white hover:bg-green-700"
+              className="inline-flex rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700"
             >
               WhatsApp us
             </a>
             <a
               href={buildTelLink()}
-              className="inline-flex rounded-lg border border-black/10 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+              className="inline-flex rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
             >
               Call now
             </a>
           </div>
           <div className="text-xs text-slate-500">
-            © {new Date().getFullYear()} {siteData.brand}. All rights reserved.
+            &copy; {new Date().getFullYear()} {siteData.brand}. All rights
+            reserved.
           </div>
         </div>
       </div>
     </footer>
   );
 }
-
