@@ -32,10 +32,11 @@ export default function ServicesPage() {
         </div>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {siteData.services.map((s) => (
+          {siteData.services.map((s, idx) => (
             <div
               key={s.title}
-              className="group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition hover:shadow-md"
+              className="group animate-fade-in-up overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/10"
+              style={{ animationDelay: `${idx * 100}ms` }}
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <Image

@@ -46,8 +46,8 @@ export default function AboutPage() {
                 <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Years of Excellence</div>
               </div>
               <div className="rounded-2xl bg-indigo-50 p-6 border border-indigo-100 transition-transform hover:scale-105">
-                <div className="text-4xl font-black text-indigo-600 mb-2">500+</div>
-                <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Happy Clients</div>
+                <div className="text-4xl font-black text-indigo-600 mb-2">{siteData.stats.cctvInstallations}</div>
+                <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">CCTV Installs</div>
               </div>
               <div className="rounded-2xl bg-violet-50 p-6 border border-violet-100 transition-transform hover:scale-105">
                 <div className="text-4xl font-black text-violet-600 mb-2">10+</div>
@@ -56,6 +56,38 @@ export default function AboutPage() {
               <div className="rounded-2xl bg-slate-100 p-6 border border-slate-200 transition-transform hover:scale-105">
                 <div className="text-4xl font-black text-slate-900 mb-2">100%</div>
                 <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Local Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder Section */}
+      <section className="bg-white py-24 border-y border-slate-100">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="grid gap-12 md:grid-cols-2 items-center">
+            <div className="relative aspect-square max-w-md overflow-hidden rounded-3xl bg-slate-100 border border-slate-200 shadow-xl">
+               <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-indigo-500/10" />
+               <div className="absolute inset-0 flex items-center justify-center p-12">
+                  <svg viewBox="0 0 24 24" fill="none" className="h-full w-full text-slate-200" stroke="currentColor" strokeWidth="1">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+               </div>
+               <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/90 backdrop-blur p-4 shadow-lg border border-white/50">
+                  <div className="font-bold text-slate-900">{siteData.founder.name}</div>
+                  <div className="text-xs font-semibold text-emerald-600 uppercase tracking-wider">{siteData.founder.role}</div>
+               </div>
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-slate-900">Leadership & Vision</h2>
+              <p className="text-lg text-slate-600 leading-relaxed italic">
+                &ldquo;{siteData.founder.bio}&rdquo;
+              </p>
+              <div className="pt-4">
+                <div className="h-1 w-20 bg-emerald-500 rounded-full" />
+                <div className="mt-4 text-sm font-bold text-slate-900">Pradeep Vishwakarma</div>
+                <div className="text-xs text-slate-500">Founder, {siteData.brand}</div>
               </div>
             </div>
           </div>

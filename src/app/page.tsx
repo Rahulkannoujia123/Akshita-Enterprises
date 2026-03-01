@@ -99,20 +99,20 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-2xl bg-slate-50 p-4">
-                  <div className="text-2xl font-extrabold text-slate-900">500+</div>
-                  <div className="text-sm text-slate-600">Happy installs</div>
+                  <div className="text-2xl font-extrabold text-slate-900">{siteData.stats.cctvInstallations}</div>
+                  <div className="text-sm text-slate-600">CCTV Installs</div>
                 </div>
                 <div className="rounded-2xl bg-slate-50 p-4">
-                  <div className="text-2xl font-extrabold text-slate-900">24x7</div>
-                  <div className="text-sm text-slate-600">Support assist</div>
+                  <div className="text-2xl font-extrabold text-slate-900">{siteData.stats.happyClients}</div>
+                  <div className="text-sm text-slate-600">Happy Clients</div>
                 </div>
                 <div className="rounded-2xl bg-slate-50 p-4">
-                  <div className="text-2xl font-extrabold text-slate-900">10+</div>
-                  <div className="text-sm text-slate-600">Core services</div>
+                  <div className="text-2xl font-extrabold text-slate-900">{siteData.stats.yearsInService}</div>
+                  <div className="text-sm text-slate-600">Years Exp.</div>
                 </div>
                 <div className="rounded-2xl bg-slate-50 p-4">
                   <div className="text-2xl font-extrabold text-slate-900">100%</div>
-                  <div className="text-sm text-slate-600">Local support</div>
+                  <div className="text-sm text-slate-600">Local Support</div>
                 </div>
               </div>
 
@@ -127,6 +127,25 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-14">
+        <div className="mb-12 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+            <div className="max-w-md">
+              <h2 className="text-2xl font-bold text-slate-900">Trusted by Local Businesses</h2>
+              <p className="mt-2 text-sm text-slate-600">
+                We have successfully secured and empowered numerous establishments in Varanasi and surrounding areas.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-8">
+              {siteData.clients.map((client) => (
+                <div key={client.name} className="flex flex-col">
+                  <span className="text-sm font-bold text-slate-900">{client.name}</span>
+                  <span className="text-xs text-slate-500">{client.industry}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="text-2xl font-bold text-slate-900">Our services</h2>
