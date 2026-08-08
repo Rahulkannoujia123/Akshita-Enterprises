@@ -34,3 +34,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Flutter / Android builds
+/emi_calculator_app/.metadata
+/emi_calculator_app/.packages
+/emi_calculator_app/.dart_tool/
+/emi_calculator_app/.flutter-plugins
+/emi_calculator_app/.flutter-plugins-dependencies
+/emi_calculator_app/build/
+/emi_calculator_app/android/local.properties
+/emi_calculator_app/android/app/build/
+/emi_calculator_app/android/.gradle/
+/emi_calculator_app/android/emi_calculator_android.iml
+/emi_calculator_app/emi_calculator.iml
+/emi_calculator_app/.idea/
+/emi_calculator_app/ios/
+/emi_calculator_app/linux/
+/emi_calculator_app/macos/
+/emi_calculator_app/windows/
+/emi_calculator_app/web/
+/emi_calculator_app/pubspec.lock
+*.apk
